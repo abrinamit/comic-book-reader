@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immersive Comic Book Reader</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="app-header">
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <h1>Comic Reader</h1>
+            </div>
+            <div class="controls">
+                <button id="theme-toggle" class="control-btn" title="Toggle Dark/Light Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="fullscreen-toggle" class="control-btn" title="Toggle Fullscreen">
+                    <i class="fas fa-expand"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Upload Section (Visible when no comic is loaded) -->
+        <div id="upload-container" class="upload-container">
+            <div class="upload-area" id="drop-area">
+                <i class="fas fa-file-archive"></i>
+                <h2>Upload Comic Book</h2>
+                <p>Drag & drop your .cbz file here or click to browse</p>
+                <input type="file" id="file-input" accept=".cbz,.zip,application/zip,application/x-zip-compressed" hidden>
+                <button id="browse-btn" class="browse-btn">Browse Files</button>
+            </div>
+            <div class="recent-comics">
+                <h3>Recent Comics</h3>
+                <div id="recent-list" class="recent-list">
+                    <!-- Recent comics will be listed here -->
+                    <p class="empty-message">No recent comics</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reader Section (Hidden until comic is loaded) -->
+        <div id="reader-container" class="reader-container hidden">
+            <!-- Reader Toolbar -->
+            <div class="reader-toolbar">
+                <button id="back-btn" class="toolbar-btn" title="Back to Library">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <div class="comic-info">
+                    <h2 id="comic-title">Comic Title</h2>
+                    <span id="page-info">Page 0 of 0</span>
+                </div>
+                <div class="view-controls">
+                    <button id="single-page-btn" class="toolbar-btn active" title="Single Page View">
+                        <i class="fas fa-file"></i>
+                    </button>
+                    <button id="double-page-btn" class="toolbar-btn" title="Double Page View">
+                        <i class="fas fa-book-open"></i>
+                    </button>
+                    <button id="zoom-in-btn" class="toolbar-btn" title="Zoom In">
+                        <i class="fas fa-search-plus"></i>
+                    </button>
+                    <button id="zoom-out-btn" class="toolbar-btn" title="Zoom Out">
+                        <i class="fas fa-search-minus"></i>
+                    </button>
+                    <button id="bookmark-btn" class="toolbar-btn" title="Bookmark Page">
+                        <i class="far fa-bookmark"></i>
+                    </button>
+                    <button id="guided-view-btn" class="toolbar-btn" title="Guided View">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Book Viewer -->
+            <div id="book-viewer" class="book-viewer">
+                <div id="book" class="book">
+                    <!-- Pages will be added here -->
+                    <div class="page loading-page">
+                        <div class="loader"></div>
+                        <p>Loading comic...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Controls -->
+            <div class="navigation-controls">
+                <button id="prev-page" class="nav-btn" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <!-- Page Thumbnails -->
+                <div id="thumbnails-container" class="thumbnails-container">
+                    <div id="thumbnails" class="thumbnails">
+                        <!-- Thumbnails will be added here -->
+                    </div>
+                </div>
+                
+                <button id="next-page" class="nav-btn" disabled>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div id="loading-overlay" class="loading-overlay hidden">
+            <div class="spinner"></div>
+            <p id="loading-message">Extracting comic...</p>
+        </div>
+    </div>
+
+    <script src="jszip.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

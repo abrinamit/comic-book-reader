@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="300" viewBox="0 0 200 300">
+  <!-- Background -->
+  <rect width="200" height="300" fill="#f0f0f0" rx="10" ry="10"/>
+  
+  <!-- Book cover design -->
+  <rect x="20" y="30" width="160" height="200" fill="#e0e0e0" rx="5" ry="5"/>
+  
+  <!-- Comic book icon -->
+  <g transform="translate(60, 80)">
+    <!-- Speech bubble -->
+    <path d="M80 40 L65 60 L40 45 L10 60 C0 50 0 20 10 10 C20 0 60 0 70 10 C80 20 80 30 80 40Z" fill="#3a86ff" stroke="#2a75e6" stroke-width="2"/>
+    
+    <!-- Comic book -->
+    <rect x="10" y="70" width="60" height="80" fill="#ff006e" stroke="#d10058" stroke-width="2" rx="3" ry="3"/>
+    <rect x="10" y="70" width="30" height="80" fill="#ff006e" stroke="#d10058" stroke-width="2" rx="3" ry="3"/>
+    <line x1="40" y1="70" x2="40" y2="150" stroke="#d10058" stroke-width="3"/>
+    
+    <!-- Comic book details -->
+    <line x1="20" y1="90" x2="30" y2="90" stroke="white" stroke-width="2"/>
+    <line x1="20" y1="100" x2="30" y2="100" stroke="white" stroke-width="2"/>
+    <line x1="50" y1="90" x2="60" y2="90" stroke="white" stroke-width="2"/>
+    <line x1="50" y1="100" x2="60" y2="100" stroke="white" stroke-width="2"/>
+    <line x1="50" y1="110" x2="60" y2="110" stroke="white" stroke-width="2"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="100" y="260" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#333">No Cover</text>
+  <text x="100" y="280" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Comic Book</text>
+</svg>
